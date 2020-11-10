@@ -22,11 +22,11 @@
  Column              | Type    | Options                        |
 | ------------------ | ------- | ------------------------------ |
 | name               | string  | null: false                    |
-| burden             | integer | null: false                    |
-| explanation        | text    | null: false                    |
-| area               | integer | null: false                    |
-| number_of_month    | integer | null: false                    |
 | price              | string  | null: false                    |
+| explanation        | text    | null: false                    |
+| burden_id          | integer | null: false                    |
+| area_id            | integer | null: false                    |
+| number_of_month_id | integer | null: false                    |
 | user_id            | integer | null: false, foreign_key: true |
 
 ### Association
@@ -39,13 +39,12 @@
  Column              | Type   | Options     |
 | ------------------ | ------ | ----------- |
 | zip_code           | string | null: false |
-| prefectures        | string | null: false |
-| municipality       | string | null: false |
+| city               | string | null: false |
 | street_number      | string | null: false |
 | telephone_number   | string | null: false |
 | building_number    | string | null: false |
 | adless             | string | null: false |
-
+| area_id            | integer| null: false |
 ### Association
 
 - belongs_to :user
