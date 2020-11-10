@@ -44,6 +44,7 @@
 | street_number      | string | null: false |
 | telephone_number   | string | null: false |
 | building_number    | string | null: false |
+| adless             | string | null: false |
 
 ### Association
 
