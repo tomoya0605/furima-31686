@@ -9,8 +9,8 @@
 | first_name         | string | null: false |
 | last_name_kana     | string | null: false |
 | first_name_kana    | string | null: false |
-| birthday           | date   | null: false |
 | encrypted_password | string | null: false |
+| birthday           | date   | null: false |
 
 ### Association
 
@@ -22,12 +22,13 @@
  Column              | Type    | Options                        |
 | ------------------ | ------- | ------------------------------ |
 | name               | string  | null: false                    |
-| price              | string  | null: false                    |
 | explanation        | text    | null: false                    |
 | burden_id          | integer | null: false                    |
+| category           | integer | null: false                    |
 | area_id            | integer | null: false                    |
 | number_of_month_id | integer | null: false                    |
 | user_id            | integer | null: false, foreign_key: true |
+| price              | integer | null: false                    |
 
 ### Association
 
@@ -42,12 +43,12 @@
 | city               | string | null: false |
 | street_number      | string | null: false |
 | telephone_number   | string | null: false |
-| building_number    | string | null: false |
+| building_number    | string |             |
 | adless             | string | null: false |
 | area_id            | integer| null: false |
 ### Association
 
-- belongs_to :user
+- belongs_to :users
 - has_one :items
 - has_one :purchaser_history
 
@@ -62,5 +63,6 @@
 ### Association
 
 - has_one :purchaser
-
+- has_one :users
+- has_one :items
 
