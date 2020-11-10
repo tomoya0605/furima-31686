@@ -24,7 +24,7 @@
 | name               | string  | null: false                    |
 | explanation        | text    | null: false                    |
 | burden_id          | integer | null: false                    |
-| category           | integer | null: false                    |
+| category_id        | integer | null: false                    |
 | area_id            | integer | null: false                    |
 | number_of_month_id | integer | null: false                    |
 | user_id            | integer | null: false, foreign_key: true |
@@ -32,8 +32,8 @@
 
 ### Association
 
-- belongs_to :user
-- has_one :purchaser
+- belongs_to :users
+- has_one    :purchaser
 
 
 ## purchaser テーブル
@@ -44,13 +44,13 @@
 | street_number      | string | null: false |
 | telephone_number   | string | null: false |
 | building_number    | string |             |
-| adless             | string | null: false |
+| address            | string | null: false |
 | area_id            | integer| null: false |
 ### Association
 
-- belongs_to :users
-- has_one :items
-- has_one :purchaser_history
+- has_one    :items
+- belongs_to :user
+- belongs_to :purchaser_history
 
 
 ## purchaser_history テーブル
@@ -62,7 +62,5 @@
 
 ### Association
 
-- has_one :purchaser
-- has_one :users
-- has_one :items
+- has_many   :purchaser
 
