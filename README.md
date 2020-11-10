@@ -62,15 +62,16 @@
 
 
 ## purchasers テーブル
- Column              | Type   | Options     |
-| ------------------ | ------ | ----------- |
-| zip_code           | string | null: false |
-| city               | string | null: false |
-| street_number      | string | null: false |
-| telephone_number   | string | null: false |
-| building_number    | string |             |
-| address            | string | null: false |
-| area_id            | integer| null: false |
+ Column              | Type   | Options                      |
+| ------------------ | ------ | -----------                  |
+| zip_code           | string | null: false                  |
+| city               | string | null: false                  |
+| street_number      | string | null: false                  |
+| telephone_number   | string | null: false                  |
+| building_number    | string |                              |
+| address            | string | null: false                  |
+| area_id            | integer| null: false                  |
+|purchaser_history_id| integer| null: false foreign_key: true|
 ### Association
 
 - belongs_to :purchaser_history
