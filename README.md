@@ -5,11 +5,13 @@
 | Column             | Type   | Options     |
 | ------------------ | ------ | ----------- |
 | name               | string | null: false |
+| email              | string | null: false |
+| password           | string | null: false |
+| encrypted_password | string | null: false |
 | last_name          | string | null: false |
 | first_name         | string | null: false |
 | last_name_kana     | string | null: false |
 | first_name_kana    | string | null: false |
-| encrypted_password | string | null: false |
 | birthday           | date   | null: false |
 
 ### Association
@@ -31,8 +33,8 @@
 | category_id        | integer | null: false                    |
 | area_id            | integer | null: false                    |
 | number_of_month_id | integer | null: false                    |
-| user_id            | integer | null: false, foreign_key: true |
 | price              | integer | null: false                    |
+| user_id            | integer | null: false, foreign_key: true |
 
 ### Association
 
