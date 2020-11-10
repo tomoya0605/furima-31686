@@ -15,7 +15,10 @@
 ### Association
 
 - has_many :items
-- has_many :purchaser
+- has_many :purchasers
+
+
+
 
 ## items テーブル
 
@@ -24,6 +27,7 @@
 | name               | string  | null: false                    |
 | explanation        | text    | null: false                    |
 | burden_id          | integer | null: false                    |
+|product_condition_id| integer | null: false                    |
 | category_id        | integer | null: false                    |
 | area_id            | integer | null: false                    |
 | number_of_month_id | integer | null: false                    |
@@ -32,25 +36,10 @@
 
 ### Association
 
-- belongs_to :users
-- has_one    :purchaser
-
-
-## purchaser テーブル
- Column              | Type   | Options     |
-| ------------------ | ------ | ----------- |
-| zip_code           | string | null: false |
-| city               | string | null: false |
-| street_number      | string | null: false |
-| telephone_number   | string | null: false |
-| building_number    | string |             |
-| address            | string | null: false |
-| area_id            | integer| null: false |
-### Association
-
-- has_one    :items
 - belongs_to :user
-- belongs_to :purchaser_history
+- has_one    :purchaser_history
+
+
 
 
 ## purchaser_history テーブル
@@ -62,5 +51,28 @@
 
 ### Association
 
-- has_many   :purchaser
+- belongs_to   :user
+- belongs_to   :item
+- has_one      :purchaser
+
+
+
+
+
+## purchasers テーブル
+ Column              | Type   | Options     |
+| ------------------ | ------ | ----------- |
+| zip_code           | string | null: false |
+| city               | string | null: false |
+| street_number      | string | null: false |
+| telephone_number   | string | null: false |
+| building_number    | string |             |
+| address            | string | null: false |
+| area_id            | integer| null: false |
+### Association
+
+- belongs_to :purchaser_history
+
+
+
 
