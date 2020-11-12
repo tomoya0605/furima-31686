@@ -10,20 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< Updated upstream
 ActiveRecord::Schema.define(version: 2020_11_11_041803) do
-=======
-ActiveRecord::Schema.define(version: 2020_11_10_101526) do
->>>>>>> Stashed changes
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-<<<<<<< Updated upstream
     t.string "nickname", null: false
-=======
-    t.string "nickname", default: "", null: false
->>>>>>> Stashed changes
     t.string "last_name", null: false
     t.string "first_name", null: false
     t.string "last_name_kana", null: false
