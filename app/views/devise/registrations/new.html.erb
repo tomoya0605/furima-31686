@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
-<%= render "shared/second-header"%>
-=======
 <%= render "shared/second-header" %>
->>>>>>> Stashed changes
 
 <%# 「モデル名」にはUserモデルであれば@userを渡しましょう。「新規登録機能へのパス」は、devise導入後にrails routesを実行してdevise/registrations#createへのパスを確認し、記載してください。 %>
 <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
@@ -15,11 +11,7 @@
   </div>
 
   <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
-<<<<<<< Updated upstream
   <%= render 'shared/error_messages', model: f.object %>
-=======
-  <%# render 'shared/error_messages', model: f.object %>
->>>>>>> Stashed changes
   <%# //インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
 
   <div class="form-group">
@@ -113,8 +105,4 @@
 </div>
 <% end %>
 
-<<<<<<< Updated upstream
 <%= render "shared/second-footer"%>
-=======
-<%# <%= render "shared/second-footer"%>
->>>>>>> Stashed changes
