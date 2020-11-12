@@ -11,7 +11,7 @@ class User < ApplicationRecord
 
 
   with_options presence: true do
-    validates :nickname,
+    validates :nickname
     validates :password, length: { minimum: 6 }
     validates :encrypted_password, length: { minimum: 6 }
     validates :last_name, format: { with: /\A[ぁ-んァ-ン一-龥]/ }
