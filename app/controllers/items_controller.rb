@@ -16,7 +16,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to action: :index
     else
-      render action: :index
+      render action: :new
     end
   end
 
