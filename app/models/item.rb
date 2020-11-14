@@ -20,5 +20,6 @@ class Item < ApplicationRecord
     validates :product_condition_id, numericality: { other_than: 0, message: "Select." } 
     validates :area_id, numericality: { other_than: 0, message: "Select." } 
   end
+    
     validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999, message: "is out of setting range"}
 end
