@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new]
 
   def index
+    @item = Item.order("id DESC")
   end
 
   def new
@@ -15,6 +16,10 @@ class ItemsController < ApplicationController
     else
       render action: :new
     end
+  end
+
+  def show
+    item = Item.find(params[:id])
   end
 
   private
