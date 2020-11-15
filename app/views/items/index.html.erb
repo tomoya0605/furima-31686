@@ -125,9 +125,8 @@
     <%= link_to '新規投稿商品', new_user_session_path, class: "subtitle" %>
     <ul class='item-lists'>
 
-      <% if @item = true %>
+      <% if @item.present? %> 
 
-      
       <% @items.each do |item| %>
       <li class='list'>
         <%= link_to "#" do %>
