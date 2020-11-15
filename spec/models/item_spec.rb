@@ -28,7 +28,7 @@ RSpec.describe Item, type: :model do
     it 'カテゴリーの選択が --- の時' do
       @item.category_id = 1
       @item.valid?
-      expect(@item.errors.full_messages).to include("Category Select.")
+      expect(@item.errors.full_messages).to include('Category Select.')
     end
     it '商品の状態についての情報が必須であること' do
       @item.product_condition_id = nil
@@ -38,7 +38,7 @@ RSpec.describe Item, type: :model do
     it '商品の状態の選択が --- の時' do
       @item.product_condition_id = 0
       @item.valid?
-      expect(@item.errors.full_messages).to include("Product condition Select.")
+      expect(@item.errors.full_messages).to include('Product condition Select.')
     end
     it '配送料の負担についての情報が必須であること' do
       @item.burden_id = nil
@@ -46,9 +46,9 @@ RSpec.describe Item, type: :model do
       expect(@item.errors.full_messages).to include("Burden can't be blank")
     end
     it '配送料の負担の選択が --- の時' do
-      @item.burden_id= 1
+      @item.burden_id = 1
       @item.valid?
-      expect(@item.errors.full_messages).to include("Burden Select.")
+      expect(@item.errors.full_messages).to include('Burden Select.')
     end
     it '発送元の地域についての情報が必須であること' do
       @item.area_id = nil
@@ -58,7 +58,7 @@ RSpec.describe Item, type: :model do
     it '発送元の地域の選択が --- の時' do
       @item.area_id = 0
       @item.valid?
-      expect(@item.errors.full_messages).to include("Area Select.")
+      expect(@item.errors.full_messages).to include('Area Select.')
     end
     it '発送までの日数についての情報が必須であること' do
       @item.number_of_month = nil
@@ -68,7 +68,7 @@ RSpec.describe Item, type: :model do
     it '発送までの日数の選択が --- の時' do
       @item.number_of_month_id = 0
       @item.valid?
-      expect(@item.errors.full_messages).to include("Number of month Select.")
+      expect(@item.errors.full_messages).to include('Number of month Select.')
     end
     it '価格についての情報が必須であること' do
       @item.price = nil
@@ -78,22 +78,22 @@ RSpec.describe Item, type: :model do
     it '価格の範囲が、¥300~¥9,999,999の間であること' do
       @item.price = 100
       @item.valid?
-      expect(@item.errors.full_messages).to include("Price is out of setting range")
+      expect(@item.errors.full_messages).to include('Price is out of setting range')
     end
     it '価格の範囲が299円以下の時' do
       @item.price = 299
       @item.valid?
-      expect(@item.errors.full_messages).to include("Price is out of setting range")
+      expect(@item.errors.full_messages).to include('Price is out of setting range')
     end
     it '価格の範囲が10000000円以上の時' do
-      @item.price = 10000000
+      @item.price = 10_000_000
       @item.valid?
-      expect(@item.errors.full_messages).to include("Price is out of setting range")
+      expect(@item.errors.full_messages).to include('Price is out of setting range')
     end
     it '販売価格は半角数字のみ保存可能であること' do
-      @item.price = "２０００"
+      @item.price = '２０００'
       @item.valid?
-      expect(@item.errors.full_messages).to include("Price is invalid. Input half-width characters.")
+      expect(@item.errors.full_messages).to include('Price is invalid. Input half-width characters.')
     end
   end
 end
