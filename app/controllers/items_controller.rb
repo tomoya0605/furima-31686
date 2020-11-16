@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit]
-  before_action :set_item, only: [:show, :edit, :update]
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
     @items = Item.order('id DESC')
@@ -34,6 +34,16 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+    redirect_to action: :index unless current_user.id == @item.user_id
+    if @item.destroy
+      redirect_to action: :index
+    # else
+    #   @item.destroy失敗時の処理（エラーメッセージを表示させるなど）
+    end
+
+  end
+
   private
 
   def item_params
@@ -42,7 +52,6 @@ class ItemsController < ApplicationController
       :area_id, :number_of_month_id, :price
     ).merge(user_id: current_user.id)
   end
-
 
   def set_item
     @item = Item.find(params[:id])
