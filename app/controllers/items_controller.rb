@@ -34,11 +34,6 @@ class ItemsController < ApplicationController
     end
   end
 
-  def destroy
-    item = Item.find(params[:id])
-    render action: :index if item.destroy
-  end
-
   private
 
   def item_params
@@ -47,6 +42,7 @@ class ItemsController < ApplicationController
       :area_id, :number_of_month_id, :price
     ).merge(user_id: current_user.id)
   end
+
 
   def set_item
     @item = Item.find(params[:id])
