@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :edit, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit]
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -36,7 +36,12 @@ class ItemsController < ApplicationController
 
   def destroy
     redirect_to action: :index unless current_user.id == @item.user_id
-    redirect_to action: :index if @item.destroy
+    if @item.destroy
+      redirect_to action: :index
+    # else
+    #   @item.destroy失敗時の処理（エラーメッセージを表示させるなど）
+    end
+
   end
 
   private
