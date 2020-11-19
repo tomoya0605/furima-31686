@@ -7,11 +7,11 @@ class Order
   with_options presence: true do
     validates :user_id
     validates :item_id
-    validates :zip_code, format: { with: /\A\d{3}-\d{4}\z/, message: '郵便番号を入力してください' }
+    validates :zip_code, format: { with: /\A\d{3}-\d{4}\z/ }
     validates :area_id
     validates :city
     validates :street_number
-    validates :telephone_number, format: { with: VALID_PHONE_NUMBER_REGEX, message: '電話番号を入力してください' }
+    validates :telephone_number, format: { with: VALID_PHONE_NUMBER_REGEX }
     validates :token
   end
 

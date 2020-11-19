@@ -4,7 +4,7 @@ const pay = () => {
     form.addEventListener("submit", (e) => { 
       e.preventDefault();
       const formResult = document.getElementById("charge-form");
-    const formData = new FormData(formResult);
+      const formData = new FormData(formResult);
 
     const card = { 
       number: formData.get("order[number]"),
@@ -20,7 +20,7 @@ const pay = () => {
         const renderDom = document.getElementById("charge-form");
         const tokenObj = `<input value=${token} type="hidden" name='card_token'>`;
         renderDom.insertAdjacentHTML("beforeend", tokenObj); 
-
+      }
         document.getElementById("card-number").removeAttribute("name");
         document.getElementById("card-cvc").removeAttribute("name");
         document.getElementById("card-exp-month").removeAttribute("name");
@@ -28,7 +28,6 @@ const pay = () => {
 
         document.getElementById("charge-form").submit();
         document.getElementById("charge-form").reset();
-      }   
     });
   });
  };

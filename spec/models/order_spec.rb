@@ -18,7 +18,7 @@ RSpec.describe Order, type: :model do
     it '郵便番号にハイフンが必要であること' do
       @order.zip_code = '0000000'
       @order.valid?
-      expect(@order.errors.full_messages).to include('Zip code 郵便番号を入力してください')
+      expect(@order.errors.full_messages).to include("Zip code is invalid")
     end
     it '都道府県が正しく記載されていないと保存できないこと' do
       @order.area_id = nil
@@ -43,12 +43,12 @@ RSpec.describe Order, type: :model do
     it '電話番号にハイフンが不要であること' do
       @order.telephone_number = '090_0000_0000'
       @order.valid?
-      expect(@order.errors.full_messages).to include('Telephone number 電話番号を入力してください')
+      expect(@order.errors.full_messages).to include("Telephone number is invalid")
     end
     it '電話番号は11桁以内でないと保存できないこと' do
       @order.telephone_number = '000000000000'
       @order.valid?
-      expect(@order.errors.full_messages).to include('Telephone number 電話番号を入力してください')
+      expect(@order.errors.full_messages).to include("Telephone number is invalid")
     end
     it 'tokenが空では登録できないこと' do
       @order.token = nil
