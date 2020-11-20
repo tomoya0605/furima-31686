@@ -34,6 +34,11 @@ RSpec.describe Order, type: :model do
           @order.valid?
           expect(@order.errors.full_messages).to include("Area can't be blank")
         end
+        it '都道府県が---の場合保存できない' do
+          @order.area_id = 0
+          @order.valid?
+          expect(@order.errors.full_messages).to include("Area Select.")
+        end
         it '市区町村が正しく記載されていないと保存できないこと' do
           @order.city = nil
           @order.valid?

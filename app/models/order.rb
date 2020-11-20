@@ -8,7 +8,7 @@ class Order
     validates :user_id
     validates :item_id
     validates :zip_code, format: { with: /\A\d{3}-\d{4}\z/ }
-    validates :area_id
+    validates :area_id, numericality: { other_than: 0, message: 'Select.' }
     validates :city
     validates :street_number
     validates :telephone_number, format: { with: VALID_PHONE_NUMBER_REGEX }
