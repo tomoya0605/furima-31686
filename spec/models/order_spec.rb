@@ -12,6 +12,10 @@ RSpec.describe Order, type: :model do
         it 'すべての値が正しく入力されていれば保存できること' do
           expect(@order).to be_valid
         end
+        it '建物名がなくても保存できる' do
+          @order.building_number = nil
+          expect(@order).to be_valid
+        end
       end
 
       context '商品が購入できない時' do
