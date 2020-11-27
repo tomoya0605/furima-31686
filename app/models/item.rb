@@ -1,5 +1,5 @@
 class Item < ApplicationRecord
-  has_one_attached :image
+  has_many_attached :images
   belongs_to :user
   has_one :purchaser_history
 
@@ -13,14 +13,14 @@ class Item < ApplicationRecord
   with_options presence: true do
     validates :name
     validates :explanation
-    validates :image
-    validates :price, numericality: { only_integer: true, message: 'is invalid. Input half-width characters.' }
-    validates :burden_id, numericality: { other_than: 1, message: 'Select.' }
-    validates :category_id, numericality: { other_than: 1, message: 'Select.' }
-    validates :number_of_month_id, numericality: { other_than: 0, message: 'Select.' }
-    validates :product_condition_id, numericality: { other_than: 0, message: 'Select.' }
-    validates :area_id, numericality: { other_than: 0, message: 'Select.' }
+    validates :images
+    validates :price, numericality: { only_integer: true }
+    validates :burden_id, numericality: { other_than: 1, message: 'を入力してください' }
+    validates :category_id, numericality: { other_than: 1, message: 'を入力してください' }
+    validates :number_of_month_id, numericality: { other_than: 0, message: 'を入力してください'}
+    validates :product_condition_id, numericality: { other_than: 0, message: 'を入力してください' }
+    validates :area_id, numericality: { other_than: 0, message: 'を入力してください' }
   end
 
-  validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999, message: 'is out of setting range' }
+  validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
 end

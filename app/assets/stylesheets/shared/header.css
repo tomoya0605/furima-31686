@@ -71,6 +71,12 @@
   color: #333333;
 }
 
+.mypage-list {
+  text-donation: none;
+  color: #333333;
+  margin-left: 40px;
+}
+
 .lists-right {
   display: flex;
   list-style: none;
