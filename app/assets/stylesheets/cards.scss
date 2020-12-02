@@ -1,0 +1,38 @@
+.card-main {
+  background-image: url('https://cdn.pixabay.com/photo/2019/10/21/12/00/wine-4565912_1280.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+.card-text {
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+.card-btn {
+  margin-top: 100px;
+}
+
+.input-card-date {
+  text-align: center;
+  display: flex;
+  line-height: 55px;
+  width: 100%;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.no-card-login {
+  width: 360px;
+  height: 50px;
+  background-color: #ea352d;
+  border: 1px solid #ea352d;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 50px;
+  color: #fff;
+  line-height: 48px;
+}

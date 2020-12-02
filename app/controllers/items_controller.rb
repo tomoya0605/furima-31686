@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit]
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_item, only: [:show, :edit, :update, :destroy, :order]
 
   def index
     @items = Item.order('id DESC')
@@ -20,6 +20,8 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @messages = Message.all
+    @message = Message.new
   end
 
   def edit

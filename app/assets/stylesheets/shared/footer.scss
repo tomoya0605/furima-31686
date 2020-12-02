@@ -3,36 +3,21 @@
 
 .ad-footer-contents {
   width: 100vw;
-  background-image: image-url('furima-footer.png');
   background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
+  
+  color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 5vh 15vw;
-  color: #fff;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
 }
-
-.ad-footer-title {
-  font-size: 4vh;
-  margin-bottom: 2vh;
-}
-
-.ad-footer-explain {
-  font-size: 3vh;
-  line-height: 30px;
-}
-
-/* //下部広告部分 */
 
 .footer {
   width: 100vw;
   padding: 5vh 0;
-  color: #FFF;
-  background-color: #272727;
+  color:black;
   text-align: center;
 }
 
@@ -53,7 +38,7 @@
 }
 
 .footer-link {
-  color: #FFF;
+  color: black;
   font-size: 12px;
   line-height: 30px;
 }

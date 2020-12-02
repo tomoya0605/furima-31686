@@ -7,6 +7,7 @@
   padding: 2vh 15vw;
   display: flex;
   flex-direction: column;
+  background-color: black;
 }
 
 .search-bar-contents {
@@ -15,10 +16,6 @@
   align-items: center;
 }
 
-.furima-icon {
-  width: 10vw;
-  margin-right: 10vw;
-}
 
 .search-form {
   width: 65vw;
@@ -63,18 +60,8 @@
 .category-list {
   text-decoration: none;
   margin-right: 3vw;
-  color: #333333;
-}
-
-.brand-list {
-  text-decoration: none;
-  color: #333333;
-}
-
-.mypage-list {
-  text-donation: none;
-  color: #333333;
-  margin-left: 40px;
+  color: white;
+  font-family: 'Hiragino Mincho Pro';
 }
 
 .lists-right {
@@ -87,24 +74,28 @@
 .user-nickname {
   text-decoration: none;
   margin-right: 3vw;
-  color: #333333;
+  color:white;
+  font-family: 'Hiragino Mincho Pro';
   font-weight: bold;
 }
 
 
 .logout {
   text-decoration: none;
-  color: #333333;
+  color: white;
+  font-family: 'Hiragino Mincho Pro';
 }
 
 .login {
   text-decoration: none;
   line-height: 32px;
   margin-right: 3vw;
-  color: #333333;
+  color: white;
+  font-family: 'Hiragino Mincho Pro';
 }
 
 .sign-up {
   text-decoration: none;
-  color: #333333;
+  color: white;
+  font-family: 'Hiragino Mincho Pro';
 }

@@ -1,7 +1,8 @@
-/* 商品の概要 */
-
 .item-show {
-  background-color: #f8f8f8;
+  background-image: url('https://xwine.jp/wp-content/uploads/2018/12/Winecellar-imageCustom.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -10,7 +11,9 @@
 }
 
 .item-box {
-  background-color: #FFF;
+  background-color:rgba(255,255,255,0.5);
+  background-blend-mode:lighten;
+  width: 70vw;
   width: 70vw;
   min-width: 1200px;
   padding: 10vh 15vw;
@@ -104,30 +107,12 @@
   position: relative;
 }
 
-.favorite-btn {
-  border-radius: 40px;
-  width: 15vw;
-  min-width: 200px;
-  color: rgb(249, 75, 0);
-  border: 2px solid #ffb340;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 20px;
-}
-
-.favorite-star-icon {
-  margin-right: 5px;
-}
-
 .report-btn {
   border-radius: 40px;
   width: 15vw;
   min-width: 200px;
-
   padding: 1vh 0;
   color: black;
-  border: 2px solid #2d2d2d;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -138,19 +123,20 @@
 }
 
 
-/* /商品の概要 */
 
 .comment-box {
-  width: 40vw;
-  background-color: #fff;
+  width: 80vw;
+  background-color:rgba(255,255,255,0.7);
+  background-blend-mode:lighten;
   margin: 5vh 0;
   text-align: center;
 }
 
 .comment-text {
-  width: 100%;
+  width: 50%;
   height: 100px;
   padding: 10px;
+  margin-top: 30px;
   border: solid 2px #dedede;
   resize: none;
 }
@@ -159,7 +145,7 @@
   padding: 10px;
   font-size: 14px;
   margin: 10px 0px;
-  text-align: left;
+  text-align: center;
 }
 
 .comment-btn {
@@ -179,27 +165,23 @@
   justify-content: center;
 }
 
-.comment-flag-icon {
-  margin: 10px 5px 0 0;
-}
-
 .links {
   display: flex;
   justify-content: space-between;
-  width: 50vw;
-
+  width: 80vw;
 }
 
 .change-item-btn {
   font-size: 30px;
   text-decoration: none;
-  color: #3CCACE;
+  color: black;
+  
 }
 
 .another-item {
   display: block;
   margin: 30px 0px 8px;
-  color: #3CCACE;
+  color: black;
   text-decoration: none;
   font-weight: bold;
   font-size: 23px;

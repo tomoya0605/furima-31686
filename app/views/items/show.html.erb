@@ -1,4 +1,3 @@
-<%= render "shared/header" %>
 
 <div class="item-show">
   <div class="item-box">
@@ -32,7 +31,11 @@
         <p class='or-text'>or</p>
         <%= link_to '削除', item_path(@item.id), method: :delete, class:'item-destroy' %> 
       <% elsif user_signed_in? && current_user.id != @item.user_id %>
-        <%= link_to '購入画面に進む', item_orders_path(@item.id), class:"item-red-btn" %>
+        <% if current_user.card.present? %>
+          <%= link_to '購入画面に進む', item_orders_path(@item.id), class:"item-red-btn" %>
+         <% else %>
+          <%= link_to '購入画面に進む', new_card_path, class:"item-red-btn" %>
+        <% end %>
       <% end %> 
     <% end %>
 
@@ -69,31 +72,27 @@
       </tbody>
     </table>
     <div class="option">
-      <div class="favorite-btn">
-        <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
-        <span>お気に入り 0</span>
-      </div>
       <div class="report-btn">
-        <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
-        <span>不適切な商品の通報</span>
+        <%=link_to 'もどる', root_path, class:"back-btn" %>
       </div>
     </div>
   </div>
 
   <div class="comment-box">
-    <form>
-      <textarea class="comment-text"></textarea>
-      <p class="comment-warn">
+    <%= form_with model: @message do |f| %>
+        <%= f.text_area :text, class:"comment-text" %>
+        <p class="comment-warn">
         相手のことを考え丁寧なコメントを心がけましょう。
         <br>
         不快な言葉遣いなどは利用制限や退会処分となることがあります。
-      </p>
-      <button type="submit" class="comment-btn">
-        <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
-        <span>コメントする<span>
-      </button>
-    </form>
-  </div>
+        </p>
+        <%= f.submit 'コメントする',class:"comment-btn" %>
+    <% end %>
+    <div id='messages'>
+      <% @messages.reverse_each do |message| %>
+       <p><%= message.text %></p>
+      <% end %>
+    </div>
   <div class="links">
     <a href="#" class="change-item-btn">
       ＜ 前の商品

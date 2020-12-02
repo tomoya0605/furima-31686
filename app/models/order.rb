@@ -12,7 +12,6 @@ class Order
     validates :city
     validates :street_number
     validates :telephone_number, format: { with: VALID_PHONE_NUMBER_REGEX }
-    validates :token
   end
 
   def save
