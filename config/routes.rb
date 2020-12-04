@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # get 'messages/new'
+  get 'items/search'
   get 'cards/new'
   devise_for :users
   root to: "items#index"

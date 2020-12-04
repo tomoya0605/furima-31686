@@ -4,6 +4,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.order('id DESC')
+    @p = Item.ransack(params[:q])
   end
 
   def new
@@ -36,12 +37,19 @@ class ItemsController < ApplicationController
     end
   end
 
+  def search
+    @p = Item.ransack(params[:q])
+    @items = @p.result(distinct: true)
+    # @items = item.all
+    # @results = @p.result.includes(:product)
+  end
+
   def destroy
     redirect_to action: :index unless current_user.id == @item.user_id
     if @item.destroy
       redirect_to action: :index
       # else
-      #   @item.destroy失敗時の処理（エラーメッセージを表示させるなど）
+      #   @item.destroy失敗時の処理
     end
   end
 

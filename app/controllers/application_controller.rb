@@ -1,8 +1,19 @@
 class ApplicationController < ActionController::Base
   before_action :basic_auth
   before_action :configure_permitted_parameters, if: :devise_controller?
+  # before_action :search_product, only: [:index]
+
+  # def index
+  #   @items = item.all
+  #   @results = @p.result.includes(:product)
+  # end
 
   private
+
+  # def search_product
+  #   @p = Item.ransack(params[:q])
+  #   @item_name = Item.select("name").distinct
+  # end
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(
@@ -11,7 +22,6 @@ class ApplicationController < ActionController::Base
   end
 
   def basic_auth
-    # 'admin'というユーザー名と、'password'というパスワードでBasic認証できるように設定
     authenticate_or_request_with_http_basic do |username, password|
       username == 'tomoya' && password == 'tomomari0605'
     end
