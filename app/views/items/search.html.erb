@@ -1,5 +1,15 @@
-<% @items.each do |item| %>
-  <li>
-    <%= item.name %>
-  </li>
-<% end %>
+<div class="search-header">
+<%= render "shared/header"%>
+</div>
+<div class="search-main">
+  <div class="form-wrap">
+    <% @items.each do |item| %>
+      <div class="search-box">
+      <li>
+        <%= link_to item.name,item_path(item.id) %>
+      </li>
+      </div>
+    <% end %>
+  </div>
+</div>
+<%= render "shared/footer" %>

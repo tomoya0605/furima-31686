@@ -1,14 +1,14 @@
-<div class='transaction-contents'>
-    <div class="form-wrap">
-      <div class="form-header">
-        <h1 class='form-header-text'>
-        マイページ
-        </h1>
-      </div><br>
-      <div class="form-group">
-        <h2>カード情報<h2>
-      </div>
-      <div class="form-group">
+<div class="card-show">
+  <div class="card-wrap">
+    <div class="form-header">
+      <h1 class='form-header-text'>
+      マイページ
+      </h1>
+    </div><br>
+    
+    <div class="show-main">
+      <div class="card-number">
+        <h1>カード情報<h1>
         【カード番号】
         <br>
         <%= "**** **** **** " + @card[:last4] %>
@@ -18,39 +18,30 @@
         <%= @card[:exp_month] %>
         /
         <%= @card[:exp_year] %>
-      </div>
       <div class="form-group">
-        <label class="form-text">
           ユーザー情報
-        </label>
       </div>
-      <div class="">
         <%= form_for(current_user) do |f| %>
-          <div class="FormField">
-            <div class="">
+          <div class="card-name">
               <%= f.label :name %>
-            </div>
-            <div class="">
               <%= f.text_field :nickname, autofocus: true %>
-            </div>
           </div>
-          <div class="Form-group">
-            <div class="">
-              <%= f.label :email %>
-            </div>
-            <div class="">
-              <%= f.email_field :email %>
-            </div>
-            <br>
+          <div class="card-email">
+            <%= f.label :email %>
+            <%= f.email_field :email %>
+          <br>
           </div>
-          <%= f.submit "更新する" %>
+            <%= f.submit "更新する" %>
           <br>
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete%>
+          <div class="card-botton">
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete%>
           <br>
-          <%= link_to "商品一覧へ戻る", root_path%>
+            <%= link_to "商品一覧へ戻る", root_path, class:"" %>
+          </div>
         <% end %>
+        </div>
       </div>
-    </div>
+  </div>
 </div>
 
 <%= render "shared/second-footer"%>

@@ -1,4 +1,3 @@
-<%# CSS・・・assets/stylesheets/shared/header.css %>
 <header class='top-page-header'>
   <div class='search-bar-contents'>
     <form class="search-form" action="#">
@@ -10,8 +9,9 @@
   </div>
   <div class='nav'>
     <ul class='lists-left'>
+    <li><%= link_to '戻る', root_path, class: "back-path"%></li>
       <li><%= link_to 'カテゴリー', "#", class: "category-list" %></li>
-      <li><%= link_to 'ブランド', "#", class: "brand-list" %></li>
+
     </ul>
     <ul class='lists-right'>
       <% if user_signed_in? %>

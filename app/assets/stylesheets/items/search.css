@@ -1,0 +1,14 @@
+.search-header {
+  background-color: black;
+  width: 100vw;
+}
+.search-main {
+  height: 100vh;
+  width: 100vw;
+  background-image: url('https://cdn.pixabay.com/photo/2019/10/21/12/00/wine-4565912_1280.jpg');
+}
+
+.search-box {
+  padding-top: 50px;
+  font-size: 30px;
+}

@@ -40,16 +40,12 @@ class ItemsController < ApplicationController
   def search
     @p = Item.ransack(params[:q])
     @items = @p.result(distinct: true)
-    # @items = item.all
-    # @results = @p.result.includes(:product)
   end
 
   def destroy
     redirect_to action: :index unless current_user.id == @item.user_id
     if @item.destroy
       redirect_to action: :index
-      # else
-      #   @item.destroy失敗時の処理
     end
   end
 

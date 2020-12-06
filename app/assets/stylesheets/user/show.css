@@ -1,5 +1,42 @@
+.card-show {
+  background-image: url('https://cdn.pixabay.com/photo/2019/10/21/12/00/wine-4565912_1280.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
 .card-info {
-  width: 50%;
   background-color: white;
   padding-bottom: 70px;
+}
+.card-wrap {
+  width: 50%;
+  background-color:rgba(255,255,255,0.5);
+  background-blend-mode:lighten;
+  padding-bottom: 70px;
+}
+
+.show-main {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+.card-number {
+  text-align: center;
+  font-size: 25px;
+}
+
+.card-name {
+  margin: 10px 10px;
+}
+
+.card-email {
+  margin: 10px 10px;
+}
+
+.card-botton {
+  margin: 20px;
 }
