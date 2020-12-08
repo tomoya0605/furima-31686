@@ -179,3 +179,20 @@ a {
   justify-content: space-between;
 }
 
+.company-wrapper {
+  background-color: black;
+  border-bottom: 1px solid white;
+}
+
+.company-wrapper h1 {
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  padding-bottom: 20px;
+  font-family: 'Hiragino Mincho Pro';
+}
+
+
+.company-contents {
+  display: flex;
+}
