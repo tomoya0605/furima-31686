@@ -13,28 +13,26 @@ a {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
-  display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   padding: 5vh 15vw;
   color: #fff;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
 }
 .container {
-  padding-bottom: 300px;
+  background-color: rgba(225, 225, 225, 0);
 }
-
 .search-text {
   width: 65vw;
   height: 30px;
 }
 
 .service-title {
-  font-size: 100px;
-  padding-bottom: 400px;
+  font-size: 60px;
+  margin-top: 200px;
   padding-right: 150px;
-  color: black;
+  color: white;
+  font-family: 'Hiragino Mincho Pro';
 }
 
 .store-btn {
@@ -195,4 +193,12 @@ a {
 
 .company-contents {
   display: flex;
+}
+
+.company-contents p {
+  text-align: center;
+  color: white;
+  font-family: 'Hiragino Mincho Pro';
+  margin-left: 200px;
+  margin-top: 150px;
 }

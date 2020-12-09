@@ -2,15 +2,15 @@
 <div class='main'>
   <div class='title-contents'>
     <div class='container'>
-        <div class="search-form">
-          <%= search_form_for @p, url: items_search_path do |f| %>
-            <div class="search-bar-contents">
-              <%= f.text_field :name_cont, class:"search-text", placeholder:'キーワードから探す' %>
+      <div class="search-form">
+        <%= search_form_for @p, url: items_search_path do |f| %>
+          <div class="search-bar-contents">
+            <%= f.text_field :name_cont, class:"search-text", placeholder:'キーワードから探す' %>
             <br>
-              <%= f.submit '検索' %> 
-            </div>
-          <% end %>
-        </div>
+            <%= f.submit '検索' %> 
+          </div>
+        <% end %>
+      </div>
       <div class='nav'>
         <ul class='lists-left'>
           <li><%= link_to 'カテゴリー', "#", class: "category-list" %></li>
@@ -25,11 +25,8 @@
           <% end %>
         </ul>
       </div>
-   </div>
-      <h2 class='service-title'>
-      </h2>
-      <p class='service-explain'>
-      </p>
+        <h2 class="service-title">ワインオークション</h2>
+    </div>
   </div>
 
   <div class='feature-contents'>
@@ -96,7 +93,18 @@
   <div class="company-wrapper">
     <h1>COMPANY</h1>
     <div class="company-contents">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d53183.326044275076!2d130.41326213547364!3d33.580442908613115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1607356529053!5m2!1sja!2sjp" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d53183.326044275076!2d130.41326213547364!3d33.580442908613115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1607356529053!5m2!1sja!2sjp" width="50%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+      <p>〒103-1234</br>
+        見本県見本市仮区見本町1-3-5</br>
+
+        TEL 01234-567-8901</br>
+
+        e-Mail info@example.com</br>
+
+        営業時間 10:00〜20:00（水曜定休）</br>
+
+        ※都合により休業する場合がございます</p>
+    </div>
   </div>
 
 </div>
